@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Bare - Start Bootstrap Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{{ url_for('static', filename = 'css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="static/css/c3.css" rel="stylesheet">
+
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            padding-top: 70px;
+            font-size:16px;
+            /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+        }
+
+        #chart {
+            /*border: #000 solid 1px ;*/
+        }
+        .about{
+            background-color: #1b6d85;
+            color: #FFFFFF;
+        }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">AQMS- Air Quality Monitoring System</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row">
+        <div class="col-lg-12 text-center about">
+
+            <h3>Air Quality Monitoring System Based on Wireless Sensor Networks</h3>
+            <h5>by Widi Ochieng Oremo</h5>
+            <h5>CS282-2101/2013</h5>
+
+        </div>
+
+
+    </div>
+    <!-- /.row -->
+
+    <div class="row">
+
+        <div class="col-lg-12 text-center">
+
+            <div class="heading text-center">
+                <h3>Carbon Monoxide Sensor Data (ppm)</h3>
+                <p>Carbon Monoxide Sensor Values from the MQ-7 sensror on the remote sensor-node as received on the base station</p>
+            </div>
+
+            <div id="chart"></div>
+
+
+            <div class="description">
+                <h3></h3>
+                <p>
+                    The table below explains the carbon monoxide levels and associated health risks: Cited from <cite>http://www.detectcarbonmonoxide.com/co-health-risks/</cite>
+                </p>
+
+                <table class="table-striped">
+                    <tbody>
+                    <tr>
+                        <td valign="top"><strong>Level of CO</strong></td>
+                        <td valign="top"><strong>Health Effects, and Other Information</strong></td>
+                    </tr>
+                    <tr>
+                        <td valign="top">0 PPM</td>
+                        <td valign="top">Normal, fresh air.</td>
+                    </tr>
+                    <tr>
+                        <td valign="top">9 PPM</td>
+                        <td valign="top">Maximum recommended indoor CO level (ASHRAE).</td>
+                    </tr>
+                    <tr>
+                        <td valign="top">10-24 PPM</td>
+                        <td valign="top">Possible health effects with long-term exposure.</td>
+                    </tr>
+                    <tr>
+                        <td valign="top">25 PPM</td>
+                        <td valign="top">Max TWA Exposure for 8 hour work-day (ACGIH).<br/>
+                            <strong><span
+                                    style="color: #ff0000;">Pocket CO TWA warning sounds each hour.</span></strong></td>
+                    </tr>
+                    <tr>
+                        <td valign="top">50 PPM</td>
+                        <td valign="top">Maximum permissible exposure in workplace (OSHA).<br/>
+                            <strong><span style="color: #ff0000;">First Pocket CO ALARM starts (optional, every 20 seconds).</span></strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top">100 PPM</td>
+                        <td valign="top">Slight headache after 1-2 hours.</td>
+                    </tr>
+                    <tr>
+                        <td valign="top">125 PPM</td>
+                        <td valign="top"><strong><span style="color: #ff0000;">Second Pocket CO ALARM starts (every 10 seconds).</span></strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top">200 PPM</td>
+                        <td valign="top">Dizziness, naseau, fagitue, headache after 2-3 hours of exposure.</td>
+                    </tr>
+                    <tr>
+                        <td valign="top">400 PPM</td>
+                        <td valign="top">Headache and nausea after 1-2 hours of exposure.<br/>
+                            Life threatening in 3 hours.<br/>
+                            <span style="color: #ff0000;"><strong>Third Pocket CO ALARM starts (every 5 seconds).</strong></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top">800 PPM</td>
+                        <td valign="top">Headache, nausea, and dizziness after 45 minutes; collapse and unconsciousness
+                            after 1 hour of exposure.<br/>
+                            Death within 2-3 hours.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top">1000 PPM</td>
+                        <td valign="top">Loss of consciousness after 1 hour of exposure.</td>
+                    </tr>
+                    <tr>
+                        <td valign="top">1600 PPM</td>
+                        <td valign="top">Headache, nausea, and dizziness after 20 minutes of exposure.<br/>
+                            Death within 1-2 hours.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top">3200 PPM</td>
+                        <td valign="top">Headache, nausea, and dizziness after 5-10 minutes; collapse and
+                            unconsciousness after 30 minutes of exposure.<br/>
+                            Death within 1 hour.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top">6400 PPM</td>
+                        <td valign="top">Death within 30 minutes.</td>
+                    </tr>
+                    <tr>
+                        <td valign="top">12,800 PPM</td>
+                        <td valign="top">Immediate physiological effects, unconsciousness.<br/>
+                            Death within 1-3 minutes of exposure.
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+
+        </div>
+
+
+
+</div>
+<!-- /.container -->
+
+<!-- jQuery Version 1.11.1 -->
+<script src="{{ url_for('static', filename = 'js/jquery.js')}}"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="{{ url_for('static', filename = 'js/bootstrap.min.js')}}"></script>
+
+
+<script src="{{ url_for('static', filename = 'js/d3/d3.min.js') }}" charset="utf-8"></script>
+<script src="{{ url_for('static', filename = 'js/c3.js') }}"></script>
+<script>
+    var chart = c3.generate({
+                bindto: '#chart',
+                data: {
+                    x: 'x',
+                    xFormat: '%Y-%m-%d %H:%M',
+                    columns: [
+                        {{xValues | tojson | safe}},
+                        {{yValues | tojson | safe}}
+    ]
+    } ,
+    axis: {
+        x: {
+            type: 'timeseries',
+                    tick
+        :
+            {
+                format: "%Y-%m-%d %H:%M"
+            }
+        }
+    }
+
+    })
+    ;
+</script>
+
+</body>
+</html>
